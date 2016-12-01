@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡效果</title>
+	<style>
+		*{	
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		#con{
+			border: 1px solid green;
+			width: 498px;
+			height: 300px;
+			margin: 50px auto;
+		}
+		.tab li {
+			list-style: none;
+			float: left;
+			width: 124px;
+			background-color: ;
+			text-align: center;
+			border:1px solid green;
+			border-left:none;
+			border-top:none;
+		}
+		.tab_son{
+			clear: both;
+			width: 500px;
+			height: 200px;
+			background-color: ;
+			display: none;
+			text-align: center;
+			line-height: 200px;
+		}
+		.active{
+			display:inline-block;
+		}
+		#title{
+			border-bottom: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="con">
+		<ul class="tab">
+			<li onclick="change(0)" id="title">1</li>
+			<li onclick="change(1)">2</li>
+			<li onclick="change(2)">3</li>
+			<li onclick="change(3)">4</li>
+		</ul>
+		<div class="tab_son active"><img src="qyc.jpg" alt=""><br>犬夜叉</div>
+		<div class="tab_son"><img src="ssw.jpg"  width='140px' height="214px" alt=""><br>杀生丸</div>
+		<div class="tab_son"><img src="lf.jpg" alt=""><br>海贼王-路飞</div>
+		<div class="tab_son"><img src="sl.jpg" alt=""><br>海贼王-索隆</div>
+	</div>
+
+
+
+
+	<script>
+		var oli = document.getElementsByClassName('tab')[0].getElementsByTagName('li');
+		var otab_son = document.getElementsByClassName('tab_son');
+		function change(a){
+			console.log(oli.length);
+			for(var i = 0 ;i<oli.length;i++){
+				otab_son[i].className = 'tab_son';
+				oli[i].id='';
+			}
+
+			oli[a].id ='title';
+			otab_son[a].className ='tab_son active'
+			console.log(otab_son[a]);
+		}
+		function lb(){
+			
+		}
+	</script>
+</body>
+</html>
